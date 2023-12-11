@@ -1,0 +1,68 @@
+﻿<Window x:Class="Proyecto_Final_Calculadora_Reg.Pantallas.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Menú Principal" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#462AD8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <!-- Ajustar el Border para que se adapte al tamaño del contenido -->
+                        <Border CornerRadius="20"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Margin="5"/>
+                            <!-- Reducir el Margin para dar más espacio al texto -->
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#28AEED"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border>
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/back-image.jpg"
+                        Stretch="None"/>
+        </Border.Background>
+        <Border 
+            BorderThickness="3">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD9" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0" Opacity="0.94">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Content="Calculadora" 
+                        Margin="10"
+                        Width="200" 
+                        Height="50" 
+                        Click="Calculadora_Click"/>
+                    <Button Content="Validador Regex" 
+                        Margin="10"
+                        Width="200" 
+                        Height="50" 
+                        Click="ValidadorRegex_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Border>
+</Window>
